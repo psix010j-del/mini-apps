@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStart — Обучение</title>
+    <!-- Важно: путь к css/style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">Web<span>Start</span></a>
+            <ul class="nav-links">
+                <li><a href="#lessons">Уроки</a></li>
+                <li><a href="#editor">Редактор</a></li>
+                <li><a href="#quiz">Тест</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Главный экран -->
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Изучи веб-разработку</h1>
+            <p>HTML, CSS и JavaScript в одном месте. Просто, понятно, бесплатно.</p>
+            <a href="#lessons" class="btn btn-primary">Начать обучение</a>
+        </div>
+    </header>
+
+    <!-- Секция уроков (генерируется через JS) -->
+    <section id="lessons" class="section">
+        <div class="container">
+            <h2 class="section-title">Программа курса</h2>
+            <div class="grid" id="lessons-grid">
+                <!-- Сюда JavaScript вставит карточки -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Редактор кода -->
+    <section id="editor" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Песочница кода</h2>
+            <p class="section-desc">Пишите код слева, результат справа.</p>
+            
+            <div class="editor-wrapper">
+                <div class="editor-header">
+                    <span>HTML / CSS / JS</span>
+                    <button onclick="runCode()" class="btn-run">▶ Запустить</button>
+                </div>
+                <div class="editor-container">
+                    <textarea id="code-input" spellcheck="false">
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+  h1 { color: #6c5ce7; }
+  button { 
+    background: #00cec9; border: none; 
+    padding: 10px 20px; color: white; 
+    border-radius: 5px; cursor: pointer; 
+  }
+</style>
+
+<h1>Привет!</h1>
+<p>Нажми на кнопку ниже:</p>
+<button onclick="alert('Работает! 🚀')">Тык</button>
+                    </textarea>
+                    <iframe id="code-output"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Тест -->
+    <section id="quiz" class="section">
+        <div class="container">
+            <h2 class="section-title">Проверь себя</h2>
+            <div class="quiz-box">
+                <div class="quiz-header">
+                    <span id="question-count">Вопрос 1 из 5</span>
+                    <span id="score">Счет: 0</span>
+                </div>
+                <div id="quiz-body">
+                    <h3 id="question-text">Загрузка...</h3>
+                    <div id="options-list" class="options-list"></div>
+                    <div id="explanation" class="explanation"></div>
+                </div>
+                <div class="quiz-footer">
+                    <button id="btn-check" class="btn btn-primary" onclick="checkAnswer()">Проверить</button>
+                    <button id="btn-next" class="btn btn-secondary" onclick="nextQuestion()" style="display:none;">Дальше</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 WebStart. Все права защищены.</p>
+    </footer>
+
+    <!-- Модальное окно для уроков -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Важно: путь к js/script.js -->
+    <script src="js/script.js"></script>
+</body>
+</html>
